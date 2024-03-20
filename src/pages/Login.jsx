@@ -35,7 +35,10 @@ function Login() {
     };
 
     try {
-      const response = await axios.post("/api/v2/users/login", data);
+      const response = await axios.post(
+        "https://test2-4dfe.onrender.com/api/v2/users/login",
+        data
+      );
       if (response.data.success) setSuccess(response.data.data);
       const userDetails = {
         _id: response.data.message.user._id,
