@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NewTransaction from "./NewTransaction";
+import { base } from "../../constant.js";
 
 function AllUser() {
   const [allUser, setAllUser] = useState([]);
@@ -17,7 +18,7 @@ function AllUser() {
   useEffect(() => {
     const fetchAllUsers = async () => {
       try {
-        const response = await axios.get("/api/v2/users/get-all-users");
+        const response = await axios.get(`${base}/api/v2/users/get-all-users`);
         if (response.data.success) setSuccess(response.data.data);
         setAllUser(response.data.message);
       } catch (error) {

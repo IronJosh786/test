@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { base } from "../../constant.js";
 
 function Register() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ function Register() {
     data.append("password", formData.password);
 
     try {
-      const response = await axios.post("/api/v2/users/register", data);
+      const response = await axios.post(`${base}/api/v2/users/register`, data);
       if (response.data.success) setSuccess(response.data.data);
       navigate("/login");
     } catch (error) {

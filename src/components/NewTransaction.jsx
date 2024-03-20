@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../fetchData.js";
 import { useParams } from "react-router-dom";
+import { base } from "../../constant.js";
 
 function NewTransaction() {
   const { givenUserName } = useParams() || "";
@@ -35,7 +36,7 @@ function NewTransaction() {
 
     try {
       const response = await axios.post(
-        "/api/v2/transactions/new-transaction",
+        `${base}/api/v2/transactions/new-transaction`,
         transactionDetails
       );
       if (response.data.data) setSuccess(response.data.data);

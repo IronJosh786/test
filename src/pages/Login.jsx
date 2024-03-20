@@ -4,6 +4,7 @@ import "../App.css";
 import { setData } from "../features/userSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import { base } from "../../constant.js";
 
 function Login() {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function Login() {
     };
 
     try {
-      const response = await axios.post("/api/v2/users/login", data);
+      const response = await axios.post(`${base}/api/v2/users/login`, data);
       if (response.data.success) setSuccess(response.data.data);
       const userDetails = {
         _id: response.data.message.user._id,

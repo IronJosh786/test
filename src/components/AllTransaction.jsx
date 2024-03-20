@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import Login from "../pages/Login";
+import { base } from "../../constant.js";
 
 function AllTransaction() {
   const { userData } = useSelector((state) => state.user);
@@ -14,7 +15,7 @@ function AllTransaction() {
     const fetchAllTransactions = async () => {
       try {
         const response = await axios.get(
-          "/api/v2/users/get-transaction-history"
+          `${base}/api/v2/users/get-transaction-history`
         );
         if (response.data.success) setSuccess(response.data.data);
         setallTransaction(response.data.message.transactionHistory);

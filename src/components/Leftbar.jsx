@@ -3,13 +3,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { setData } from "../features/userSlice.js";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import { base } from "../../constant.js";
 
 function Leftbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    const response = await axios.post("/api/v2/users/logout");
+    const response = await axios.post(`${base}/api/v2/users/logout`);
     if (response.data.success) {
       dispatch(setData(null));
       navigate("/login");

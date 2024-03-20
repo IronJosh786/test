@@ -1,9 +1,10 @@
 import axios from "axios";
 import { setData } from "./features/userSlice.js";
+import { base } from "../constant.js";
 
 export const fetchData = async (dispatch) => {
   try {
-    const response = await axios.get("/api/v2/users/current-user");
+    const response = await axios.get(`${base}/api/v2/users/current-user`);
     if (response.data.success) {
       const userDetails = {
         _id: response.data.message._id,

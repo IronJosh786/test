@@ -5,6 +5,7 @@ import "../App.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { setData } from "../features/userSlice.js";
 import axios from "axios";
+import { base } from "../../constant.js";
 
 function Navbar() {
   const { isDarkMode } = useSelector((state) => state.darkMode);
@@ -18,7 +19,7 @@ function Navbar() {
   };
 
   const handleLogout = async () => {
-    const response = await axios.post("/api/v2/users/logout");
+    const response = await axios.post(`${base}/api/v2/users/logout`);
     if (response.data.success) {
       dispatch(setData(null));
       navigate("/login");

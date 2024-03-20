@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../fetchData.js";
 import axios from "axios";
+import { base } from "../../constant.js";
 
 function Profile() {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ function Profile() {
 
     try {
       const response = await axios.patch(
-        "/api/v2/users/update-profilePicture",
+        `${base}/api/v2/users/update-profilePicture`,
         formData
       );
 
@@ -77,7 +78,10 @@ function Profile() {
       newPassword: details.newPassword,
     };
     try {
-      const response = await axios.post("/api/v2/users/change-password", data);
+      const response = await axios.post(
+        `${base}/api/v2/users/change-password`,
+        data
+      );
       if (response.data.success) {
         setSuccess("Password updated");
       }
