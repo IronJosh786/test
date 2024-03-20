@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-h1 {
+  font-size: 2.5rem;
+}
+.font-h2 {
+  font-size: 2rem;
+}
+.font-h3 {
+  font-size: 1.75rem;
+}
+.font-h4 {
+  font-size: 1.5rem;
+}
+.font-h5 {
+  font-size: 1.25rem;
+}
+.font-h6 {
+  font-size: 1rem;
+}
+.font-base {
+  font-size: 0.875rem;
+}
+.font-sm {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .font-h1 {
+    font-size: 3rem;
+  }
+  .font-h2 {
+    font-size: 2.5rem;
+  }
+  .font-h3 {
+    font-size: 2rem;
+  }
+  .font-h4 {
+    font-size: 1.75rem;
+  }
+  .font-h5 {
+    font-size: 1.5rem;
+  }
+  .font-h6 {
+    font-size: 1.25rem;
+  }
+  .font-base {
+    font-size: 1rem;
+  }
+  .font-sm {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-h1 {
+    font-size: 3.5rem;
+  }
+  .font-h2 {
+    font-size: 3rem;
+  }
+  .font-h3 {
+    font-size: 2.5rem;
+  }
+  .font-h4 {
+    font-size: 2rem;
+  }
+  .font-h5 {
+    font-size: 1.75rem;
+  }
+  .font-h6 {
+    font-size: 1.5rem;
+  }
+  .font-base {
+    font-size: 1.25rem;
+  }
+  .font-sm {
+    font-size: 1rem;
+  }
+}
+
+input[type="file"]::file-selector-button {
+  background: #2372f3;
+  padding: 0.4rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  border: 0;
+}
