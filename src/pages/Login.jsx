@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
 import { setData } from "../features/userSlice.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { base } from "../../constant.js";
 
 function Login() {
   const dispatch = useDispatch();
-  const { userData } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({

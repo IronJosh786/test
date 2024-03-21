@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import NewTransaction from "./NewTransaction";
 import { base } from "../../constant.js";
 
 function AllUser() {
