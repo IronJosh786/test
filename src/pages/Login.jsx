@@ -23,8 +23,6 @@ function Login() {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  axios.defaults.withCredentials = true;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
