@@ -11,6 +11,8 @@ function AllUser() {
   const navigate = useNavigate();
 
   // axios.defaults.withCredentials = true;
+  const token = sessionStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleSend = (givenUsername) => {
     navigate(`/new-transaction/${givenUsername}`);

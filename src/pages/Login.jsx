@@ -20,6 +20,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
 
   // axios.defaults.withCredentials = true;
+  // const token = sessionStorage.getItem("accessToken");
+  // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });

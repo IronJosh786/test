@@ -12,6 +12,8 @@ function AllTransaction() {
   const [error, setError] = useState("");
 
   // axios.defaults.withCredentials = true;
+  const token = sessionStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   useEffect(() => {
     const fetchAllTransactions = async () => {

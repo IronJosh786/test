@@ -20,6 +20,7 @@ function Register() {
   const [loading, setLoading] = useState(false);
 
   // axios.defaults.withCredentials = true;
+  // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });

@@ -10,6 +10,8 @@ function Leftbar() {
   const navigate = useNavigate();
 
   // axios.defaults.withCredentials = true;
+  const token = sessionStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleLogout = async () => {
     const response = await axios.post(`${base}/api/v2/users/logout`);

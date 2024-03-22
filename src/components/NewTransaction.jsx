@@ -20,6 +20,8 @@ function NewTransaction() {
   const { userData } = useSelector((state) => state.user);
 
   // axios.defaults.withCredentials = true;
+  const token = sessionStorage.getItem("accessToken");
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.id]: e.target.value });
