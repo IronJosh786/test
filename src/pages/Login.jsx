@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
 import { setData } from "../features/userSlice.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { base } from "../../constant.js";
 
@@ -18,6 +18,8 @@ function Login() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { userData } = useSelector((state) => state.user);
 
   axios.defaults.withCredentials = true;
   // const token = sessionStorage.getItem("accessToken");
@@ -52,6 +54,7 @@ function Login() {
       };
       sessionStorage.setItem("accessToken", response.data.message.accessToken);
       dispatch(setData(userDetails));
+      console.log(userData);
       navigate("/");
     } catch (error) {
       if (error.response) {
