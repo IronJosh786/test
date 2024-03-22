@@ -19,7 +19,7 @@ function Login() {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = true;
   // const token = sessionStorage.getItem("accessToken");
   // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
