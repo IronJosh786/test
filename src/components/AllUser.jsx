@@ -10,6 +10,8 @@ function AllUser() {
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   const handleSend = (givenUsername) => {
     navigate(`/new-transaction/${givenUsername}`);
   };

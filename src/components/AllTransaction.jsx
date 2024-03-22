@@ -11,6 +11,8 @@ function AllTransaction() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
+  axios.defaults.withCredentials = true;
+
   useEffect(() => {
     const fetchAllTransactions = async () => {
       try {

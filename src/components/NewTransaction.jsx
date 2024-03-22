@@ -19,6 +19,8 @@ function NewTransaction() {
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => state.user);
 
+  axios.defaults.withCredentials = true;
+
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.id]: e.target.value });
   };

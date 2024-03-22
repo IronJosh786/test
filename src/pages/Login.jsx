@@ -19,6 +19,8 @@ function Login() {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
+  axios.defaults.withCredentials = true;
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -44,7 +46,9 @@ function Login() {
         email: response.data.message.user.email,
         profilePictureUrl: response.data.message.user.profilePicture,
         balance: response.data.message.user.balance,
+        token: response.data.message.accessToken,
       };
+      console.log(userDetails);
       dispatch(setData(userDetails));
       navigate("/");
     } catch (error) {

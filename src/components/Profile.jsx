@@ -20,6 +20,8 @@ function Profile() {
   const [imageError, setImageError] = useState("");
   const [imageSuccess, setImageSuccess] = useState("");
 
+  axios.defaults.withCredentials = true;
+
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.id]: e.target.value });
   };
