@@ -9,7 +9,7 @@ function Leftbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = true;
   const token = sessionStorage.getItem("accessToken");
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 

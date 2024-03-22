@@ -20,7 +20,7 @@ function Profile() {
   const [imageError, setImageError] = useState("");
   const [imageSuccess, setImageSuccess] = useState("");
 
-  // axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = true;
   const token = sessionStorage.getItem("accessToken");
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 

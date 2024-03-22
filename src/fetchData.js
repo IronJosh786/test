@@ -3,7 +3,7 @@ import { setData } from "./features/userSlice.js";
 import { base } from "../constant.js";
 
 export const fetchData = async (dispatch) => {
-  // axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = true;
   const token = sessionStorage.getItem("accessToken");
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   try {
