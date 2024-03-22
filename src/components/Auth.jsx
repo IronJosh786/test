@@ -4,7 +4,8 @@ import Login from "../pages/Login";
 import Cookies from "js-cookie";
 
 function Auth() {
-  const token = Cookies.get("accessToken");
+  // const token = Cookies.get("accessToken");
+  const token = sessionStorage.getItem("accessToken");
   return token ? <Outlet /> : <Login />;
 }
 

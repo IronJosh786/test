@@ -48,7 +48,7 @@ function Login() {
         balance: response.data.message.user.balance,
         token: response.data.message.accessToken,
       };
-      console.log(userDetails);
+      sessionStorage.setItem("accessToken", accessToken);
       dispatch(setData(userDetails));
       navigate("/");
     } catch (error) {
