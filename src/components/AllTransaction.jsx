@@ -17,7 +17,7 @@ function AllTransaction() {
     const fetchAllTransactions = async () => {
       try {
         const response = await axios.get(
-          `/api/v2/users/get-transaction-history`
+          `${base}/api/v2/users/get-transaction-history`
         );
         if (response.data.success) setSuccess(response.data.data);
         setallTransaction(response.data.message.transactionHistory);

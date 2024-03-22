@@ -19,7 +19,7 @@ function AllUser() {
   useEffect(() => {
     const fetchAllUsers = async () => {
       try {
-        const response = await axios.get(`/api/v2/users/get-all-users`);
+        const response = await axios.get(`${base}/api/v2/users/get-all-users`);
         if (response.data.success) setSuccess(response.data.data);
         setAllUser(response.data.message);
       } catch (error) {

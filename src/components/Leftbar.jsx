@@ -12,7 +12,7 @@ function Leftbar() {
   axios.defaults.withCredentials = true;
 
   const handleLogout = async () => {
-    const response = await axios.post(`/api/v2/users/logout`);
+    const response = await axios.post(`${base}/api/v2/users/logout`);
     if (response.data.success) {
       dispatch(setData(null));
       navigate("/login");
