@@ -43,7 +43,7 @@ function Register() {
     data.append("password", formData.password);
 
     try {
-      const response = await axios.post(`${base}/api/v2/users/register`, data);
+      const response = await axios.post(`/api/v2/users/register`, data);
       if (response.data.success) setSuccess(response.data.data);
       navigate("/login");
     } catch (error) {

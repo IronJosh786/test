@@ -38,7 +38,7 @@ function NewTransaction() {
 
     try {
       const response = await axios.post(
-        `${base}/api/v2/transactions/new-transaction`,
+        `/api/v2/transactions/new-transaction`,
         transactionDetails
       );
       if (response.data.data) setSuccess(response.data.data);

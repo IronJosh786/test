@@ -45,7 +45,7 @@ function Profile() {
 
     try {
       const response = await axios.patch(
-        `${base}/api/v2/users/update-profilePicture`,
+        `/api/v2/users/update-profilePicture`,
         formData
       );
 
@@ -80,10 +80,7 @@ function Profile() {
       newPassword: details.newPassword,
     };
     try {
-      const response = await axios.post(
-        `${base}/api/v2/users/change-password`,
-        data
-      );
+      const response = await axios.post(`/api/v2/users/change-password`, data);
       if (response.data.success) {
         setSuccess("Password updated");
       }
