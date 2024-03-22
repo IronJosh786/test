@@ -50,7 +50,7 @@ function Login() {
         balance: response.data.message.user.balance,
         token: response.data.message.accessToken,
       };
-      sessionStorage.setItem("accessToken", accessToken);
+      sessionStorage.setItem("accessToken", response.data.message.accessToken);
       dispatch(setData(userDetails));
       navigate("/");
     } catch (error) {
