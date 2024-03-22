@@ -8,7 +8,7 @@ function Home() {
     <div className="grid lg:grid-cols-12">
       <LeftBar />
       <Outlet />
-      <Rightbar />
+      {/* <Rightbar /> */}
     </div>
   );
 }
