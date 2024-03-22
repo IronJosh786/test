@@ -19,17 +19,17 @@ const App = () => {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route element={<Auth />}>
-          <Route path="/" element={<Home />} exact>
-            <Route index element={<AllUser />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route
-              path="/new-transaction/:givenUserName?"
-              element={<NewTransaction />}
-            />
-            <Route path="/all-transactions" element={<AllTransaction />} />
-          </Route>
+        {/* <Route element={<Auth />}> */}
+        <Route path="/" element={<Home />} exact>
+          <Route index element={<AllUser />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/new-transaction/:givenUserName?"
+            element={<NewTransaction />}
+          />
+          <Route path="/all-transactions" element={<AllTransaction />} />
         </Route>
+        {/* </Route> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
