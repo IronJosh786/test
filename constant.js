@@ -1,1 +1,1 @@
-export const base = "https://test2-4dfe.onrender.com";
+export const base = "http://localhost:3000";

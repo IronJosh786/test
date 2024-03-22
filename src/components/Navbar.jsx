@@ -14,7 +14,7 @@ function Navbar() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
 
   const handleToggleTheme = () => {
     dispatch(toggleTheme());
