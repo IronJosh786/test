@@ -9,8 +9,8 @@ function Auth() {
   // const token = sessionStorage.getItem("accessToken");
   // const token = localStorage.getItem("accessToken");
   const { userData } = useSelector((state) => state.user);
-  const token = userData.token;
-  if (!token) {
+  const token = userData?.token || "";
+  if (!token.trim()) {
     return <Login />;
   }
   return <Outlet />;
