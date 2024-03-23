@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { base } from "../../constant.js";
+import { useSelector } from "react-redux";
 
 function AllUser() {
   const [allUser, setAllUser] = useState([]);
@@ -11,7 +12,9 @@ function AllUser() {
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
-  const token = sessionStorage.getItem("accessToken");
+  // const token = sessionStorage.getItem("accessToken");
+  const { userData } = useSelector((state) => state.user);
+  const token = userData.token;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleSend = (givenUsername) => {

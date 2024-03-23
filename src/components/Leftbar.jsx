@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { setData } from "../features/userSlice.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { base } from "../../constant.js";
 
@@ -10,7 +10,9 @@ function Leftbar() {
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
-  const token = sessionStorage.getItem("accessToken");
+  // const token = sessionStorage.getItem("accessToken");
+  const { userData } = useSelector((state) => state.user);
+  const token = userData.token;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleLogout = async () => {

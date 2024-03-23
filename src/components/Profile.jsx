@@ -21,7 +21,8 @@ function Profile() {
   const [imageSuccess, setImageSuccess] = useState("");
 
   axios.defaults.withCredentials = true;
-  const token = sessionStorage.getItem("accessToken");
+  // const token = sessionStorage.getItem("accessToken");
+  const token = userData.token;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleChange = (e) => {

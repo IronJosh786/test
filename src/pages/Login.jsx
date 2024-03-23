@@ -53,6 +53,7 @@ function Login() {
         token: response.data.message.accessToken,
       };
       sessionStorage.setItem("accessToken", response.data.message.accessToken);
+      // localStorage.setItem("accessToken", response.data.message.accessToken);
       dispatch(setData(userDetails));
       console.log(userData);
       navigate("/");
