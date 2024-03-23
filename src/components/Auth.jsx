@@ -1,16 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Login from "../pages/Login";
-import Cookies from "js-cookie";
-import { useSelector } from "react-redux";
 
 function Auth() {
-  // const token = Cookies.get("accessToken");
-  // const token = sessionStorage.getItem("accessToken");
-  // const token = localStorage.getItem("accessToken");
-  const { userData } = useSelector((state) => state.user);
+  let userData = null;
+  try {
+    userData = JSON.parse(localStorage.getItem("userData"));
+  } catch (error) {
+    console.error("Error parsing userData from localStorage:", error);
+  }
+
   const token = userData?.token || "";
-  if (!token.trim()) {
+  if (!token) {
     return <Login />;
   }
   return <Outlet />;

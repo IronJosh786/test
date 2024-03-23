@@ -12,7 +12,6 @@ function AllUser() {
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
-  // const token = sessionStorage.getItem("accessToken");
   const { userData } = useSelector((state) => state.user);
   const token = userData?.token;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;

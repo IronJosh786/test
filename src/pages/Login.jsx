@@ -22,8 +22,6 @@ function Login() {
   const { userData } = useSelector((state) => state.user);
 
   axios.defaults.withCredentials = true;
-  // const token = sessionStorage.getItem("accessToken");
-  // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -52,8 +50,6 @@ function Login() {
         balance: response.data.message.user.balance,
         token: response.data.message.accessToken,
       };
-      sessionStorage.setItem("accessToken", response.data.message.accessToken);
-      // localStorage.setItem("accessToken", response.data.message.accessToken);
       dispatch(setData(userDetails));
       navigate("/");
     } catch (error) {
