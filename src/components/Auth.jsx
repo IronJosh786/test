@@ -10,11 +10,13 @@ function Auth() {
     console.error("Error parsing userData from localStorage:", error);
   }
 
-  const token = userData?.token || "";
-  if (!token) {
-    return <Login />;
-  }
-  return <Outlet />;
+  setTimeout(() => {
+    const token = userData?.token || "";
+    if (!token) {
+      return <Login />;
+    }
+    return <Outlet />;
+  }, 1000);
 }
 
 export default Auth;
