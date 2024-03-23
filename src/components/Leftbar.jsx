@@ -12,7 +12,7 @@ function Leftbar() {
   axios.defaults.withCredentials = true;
   // const token = sessionStorage.getItem("accessToken");
   const { userData } = useSelector((state) => state.user);
-  const token = userData.token;
+  const token = userData?.token;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
   const handleLogout = async () => {
