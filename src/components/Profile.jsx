@@ -55,7 +55,7 @@ function Profile() {
       if (response.data.success) {
         setImageSuccess("Image updated");
       }
-      await fetchData(dispatch);
+      await fetchData(dispatch, userData);
       setImage(null);
     } catch (error) {
       setLoading(false);

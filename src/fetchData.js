@@ -1,12 +1,10 @@
 import axios from "axios";
 import { setData } from "./features/userSlice.js";
 import { base } from "../constant.js";
-import { useSelector } from "react-redux";
 
-export const fetchData = async (dispatch) => {
+export const fetchData = async (dispatch, userData) => {
   axios.defaults.withCredentials = true;
   // const token = sessionStorage.getItem("accessToken");
-  const { userData } = useSelector((state) => state.user);
   const token = userData?.token;
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   try {

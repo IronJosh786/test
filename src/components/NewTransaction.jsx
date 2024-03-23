@@ -45,7 +45,7 @@ function NewTransaction() {
         transactionDetails
       );
       if (response.data.data) setSuccess(response.data.data);
-      await fetchData(dispatch);
+      await fetchData(dispatch, userData);
     } catch (error) {
       if (error.response) {
         // Server responded with an error
