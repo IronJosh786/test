@@ -10,6 +10,7 @@ function AllTransaction() {
   const [allTransaction, setallTransaction] = useState([]);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   axios.defaults.withCredentials = true;
   const token = userData?.token;
@@ -17,6 +18,7 @@ function AllTransaction() {
 
   useEffect(() => {
     const fetchAllTransactions = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `${base}/api/v2/users/get-transaction-history`
@@ -35,6 +37,8 @@ function AllTransaction() {
           // Something happened in setting up the request that triggered an error
           setError("An error occurred. Please try again later.");
         }
+      } finally {
+        setLoading(false);
       }
     };
     fetchAllTransactions();
@@ -105,6 +109,11 @@ function AllTransaction() {
     <div className={`col-span-8 px-8 lg:px-0`}>
       <h4 className="font-h4">All Transactions</h4>
       <div className="my-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+        {loading && (
+          <div className="font-sm text-center mt-4 text-gray">
+            Processing...
+          </div>
+        )}
         {allTransaction.length === 0 ? "No transaction to show" : ""}
         {allTransaction.map((singleTransaction) =>
           transactionTemplate(singleTransaction)
