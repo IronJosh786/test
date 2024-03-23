@@ -17,6 +17,7 @@ function Leftbar() {
   const handleLogout = async () => {
     const response = await axios.post(`${base}/api/v2/users/logout`);
     if (response.data.success) {
+      localStorage.removeItem("userData");
       dispatch(setData(null));
       navigate("/login");
     }
