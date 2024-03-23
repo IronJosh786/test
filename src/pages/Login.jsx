@@ -55,7 +55,6 @@ function Login() {
       sessionStorage.setItem("accessToken", response.data.message.accessToken);
       // localStorage.setItem("accessToken", response.data.message.accessToken);
       dispatch(setData(userDetails));
-      console.log(userData);
       navigate("/");
     } catch (error) {
       if (error.response) {

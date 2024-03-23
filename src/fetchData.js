@@ -19,7 +19,7 @@ export const fetchData = async (dispatch) => {
         email: response.data.message.email,
         profilePictureUrl: response.data.message.profilePicture,
         balance: response.data.message.balance,
-        token: response.data.message.accessToken,
+        token: token,
       };
       dispatch(setData(userDetails));
     }
