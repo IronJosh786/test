@@ -109,12 +109,18 @@ function AllTransaction() {
     <div className={`col-span-8 px-8 lg:px-0`}>
       <h4 className="font-h4">All Transactions</h4>
       <div className="my-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-        {loading && (
+        {loading ? (
           <div className="font-sm text-center mt-4 text-gray">
             Processing...
           </div>
+        ) : (
+          allTransaction.length === 0 && (
+            <div className="font-sm text-center mt-4 text-gray">
+              No transaction to show
+            </div>
+          )
         )}
-        {allTransaction.length === 0 ? "No transaction to show" : ""}
+
         {allTransaction.map((singleTransaction) =>
           transactionTemplate(singleTransaction)
         )}
