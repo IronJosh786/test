@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Login from "../pages/Login";
+import { useSelector } from "react-redux";
 
 function Auth() {
-  const [userData, setUserData] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     let parsedUserData = null;
     try {
-      parsedUserData = JSON.parse(localStorage.getItem("userData"));
+      const { userData } = useSelector((state) => state.user);
+      parsedUserData = JSON.parse(localStorage.getItem("userData")) || userData;
     } catch (error) {
       console.error("Error parsing userData from localStorage:", error);
     }
-    setUserData(parsedUserData);
-  }, []); // Run only once on component mount
+    setData(parsedUserData);
+  }, []);
 
-  if (!userData) {
-    return null; // Or a loading indicator if necessary
+  if (!data) {
+    return null;
   }
 
-  const token = userData?.token || "";
+  const token = data?.token || "";
   if (!token) {
     return <Login />;
   }
