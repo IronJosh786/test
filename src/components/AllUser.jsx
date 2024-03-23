@@ -8,6 +8,7 @@ function AllUser() {
   const [allUser, setAllUser] = useState([]);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ function AllUser() {
 
   useEffect(() => {
     const fetchAllUsers = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(`${base}/api/v2/users/get-all-users`);
         if (response.data.success) setSuccess(response.data.data);
@@ -38,6 +40,8 @@ function AllUser() {
           // Something happened in setting up the request that triggered an error
           setError("An error occurred. Please try again later.");
         }
+      } finally {
+        setLoading(false);
       }
     };
     fetchAllUsers();
@@ -86,6 +90,11 @@ function AllUser() {
             </div>
           </div>
         ))}
+        {loading && (
+          <div className="font-sm text-center mt-4 text-gray">
+            Processing...
+          </div>
+        )}
       </div>
     </div>
   );
