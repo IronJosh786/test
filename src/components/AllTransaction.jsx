@@ -63,7 +63,7 @@ function AllTransaction() {
     return (
       <div
         key={entry._id}
-        className="bg-primary_light dark:bg-primary_dark text-white rounded-md border-gray p-2 flex flex-col justify-center items-center text-center gap-4"
+        className="bg-primary_light dark:bg-primary_dark text-white rounded-md border-gray p-2 flex flex-col justify-center items-center text-center gap-4 mb-8"
       >
         <div className="flex items-center gap-4">
           <div className="flex flex-col gap-4 items-center">

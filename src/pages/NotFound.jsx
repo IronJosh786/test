@@ -5,6 +5,7 @@ function NotFound() {
     <div className="h-full w-full grid place-items-center font-h1 font-bold">
       <p>404</p>
       <p>Page Not Found</p>
+      <Footer />
     </div>
   );
 }

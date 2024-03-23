@@ -116,7 +116,7 @@ function Profile() {
   };
 
   return (
-    <div className={`col-span-8 px-8 lg-px-0`}>
+    <div className={`col-span-8 px-8 lg-px-0 mb-8`}>
       <h4 className="font-h4">Profile</h4>
       <div className="my-4 flex flex-col items-center md:items-start text-center md:flex-row gap-4 md:justify-between font-sm bg-primary_light dark:bg-primary_dark rounded-md p-2 text-white">
         <div className="flex flex-col gap-4 items-center justify-center">

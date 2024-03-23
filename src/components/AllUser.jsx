@@ -59,7 +59,7 @@ function AllUser() {
   };
 
   return (
-    <div className={`col-span-8 px-8 lg:px-0`}>
+    <div className={`col-span-8 px-8 lg:px-0 mb-8`}>
       <h4 className="font-h4">All Users</h4>
       <div className="my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-white">
         {allUser.map((singleUser) => (
