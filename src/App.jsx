@@ -20,8 +20,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route element={<Auth />}>
-          <Route path="/" element={<Home />} exact>
-            <Route index element={<AllUser />} />
+          <Route path="/" element={<Home />}>
+            <Route path="/" element={<AllUser />} />
             <Route path="/profile" element={<Profile />} />
             <Route
               path="/new-transaction/:givenUserName?"
