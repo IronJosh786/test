@@ -120,7 +120,6 @@ function AllTransaction() {
             </div>
           )
         )}
-
         {allTransaction.map((singleTransaction) =>
           transactionTemplate(singleTransaction)
         )}

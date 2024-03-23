@@ -80,16 +80,7 @@ function Register() {
       <div className="w-full md:w-1/2">
         <div className="max-w-[380px] mx-auto flex flex-col justify-center gap-4 p-4 rounded-md shadow-md drop-shadow-md dark:shadow-gray">
           <h2 className="font-h3 mb-4 font-semibold">Register</h2>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <label htmlFor="fullName" className="font-base font-medium">
-              Full Name<span className="text-sent">*</span>
-            </label>
-            <input
-              id="fullName"
-              type="text"
-              onChange={handleChange}
-              className="p-1 font-sm rounded-md border border-gray dark:bg-bg_dark"
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col">
             <label htmlFor="profilePicture" className="font-base font-medium">
               Profile Picture<span className="text-sent">*</span>
             </label>
@@ -97,45 +88,54 @@ function Register() {
               id="profilePicture"
               type="file"
               onChange={handleFileChange}
-              className="dark:bg-bg_dark"
+              className="mt-2 dark:bg-bg_dark"
             />
-            <label htmlFor="username" className="font-base font-medium">
+            <label htmlFor="fullName" className="mt-4 font-base font-medium">
+              Full Name<span className="text-sent">*</span>
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              onChange={handleChange}
+              className="mt-2 px-4 py-1 leading-4 font-sm rounded-md border border-gray dark:bg-bg_dark"
+            />
+            <label htmlFor="username" className="mt-4 font-base font-medium">
               Username<span className="text-sent">*</span>
             </label>
             <input
               id="username"
               type="text"
               onChange={handleChange}
-              className="p-1 font-sm rounded-md border border-gray dark:bg-bg_dark"
+              className="mt-2 px-4 py-1 leading-4 font-sm rounded-md border border-gray dark:bg-bg_dark"
             />
-            <label htmlFor="email" className="font-base font-medium">
+            <label htmlFor="email" className="mt-4 font-base font-medium">
               Email<span className="text-sent">*</span>
             </label>
             <input
               id="email"
               type="text"
               onChange={handleChange}
-              className="p-1 font-sm rounded-md border border-gray dark:bg-bg_dark"
+              className="mt-2 px-4 py-1 leading-4 font-sm rounded-md border border-gray dark:bg-bg_dark"
             />
-            <label htmlFor="password" className="font-base font-medium">
+            <label htmlFor="password" className="mt-4 font-base font-medium">
               Password<span className="text-sent">*</span>
             </label>
             <input
               id="password"
               type="password"
               onChange={handleChange}
-              className="p-1 font-sm rounded-md border border-gray dark:bg-bg_dark"
+              className="mt-2 px-4 py-1 leading-4 font-sm rounded-md border border-gray dark:bg-bg_dark"
             />
             {loading && (
-              <div className="font-sm text-center mt-4 text-gray">
+              <div className="font-sm text-center mt-2 text-gray">
                 Processing...
               </div>
             )}
             {error && (
-              <div className="font-sm text-center mt-4 text-sent">{error}</div>
+              <div className="font-sm text-center mt-2 text-sent">{error}</div>
             )}
             {success && (
-              <div className="font-sm text-center mt-4 text-received">
+              <div className="font-sm text-center mt-2 text-received">
                 {success}
               </div>
             )}
@@ -145,7 +145,7 @@ function Register() {
             >
               Register
             </button>
-            <p className="font-sm text-center">
+            <p className="mt-2 font-sm text-center">
               Have an account?{" "}
               <NavLink to={"/login"}>
                 <span className="font-bold cursor-pointer">Login</span>

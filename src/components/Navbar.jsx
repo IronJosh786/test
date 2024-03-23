@@ -41,8 +41,12 @@ function Navbar() {
 
   return (
     <div className="relative flex justify-between items-center px-8 py-1 mb-4 shadow-md shadow-gray">
-      <NavLink to={"/"} className="font-h2 cursor-pointer">
+      <NavLink
+        to={"/"}
+        className="font-h2 cursor-pointer flex justify-center items-center gap-2"
+      >
         <i className="ri-exchange-dollar-line"></i>
+        <p className="hidden sm:block font-h4 font-semibold">Money Transfer</p>
       </NavLink>
       <div className="flex gap-8">
         <button

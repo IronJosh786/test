@@ -77,7 +77,9 @@ function AllUser() {
               </div>
               <div className="flex flex-col">
                 <p className="font-sm font-medium">{singleUser.username}</p>
-                <p className="font-base capitalize">{singleUser.fullName}</p>
+                <p className="mt-1 font-base capitalize">
+                  {singleUser.fullName}
+                </p>
               </div>
             </div>
             <div>

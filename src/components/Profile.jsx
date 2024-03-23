@@ -160,34 +160,32 @@ function Profile() {
             </div>
           )}
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mt-8 md:mt-0">
           <div className="font-base font-semibold underline">Details</div>
-          <p>
-            <span className="font-semibold underline underline-offset-2">
-              Username:
-            </span>{" "}
-            {userData.username}
-          </p>
-          <p>
-            <span className="font-semibold underline underline-offset-2">
-              Full Name:
-            </span>{" "}
-            {userData.fullName}
-          </p>
-          <p>
-            <span className="font-semibold underline underline-offset-2">
-              Email:
-            </span>{" "}
-            {userData.email}
-          </p>
-          <p>
-            <span className="font-semibold underline underline-offset-2">
-              Balance:
-            </span>{" "}
-            $ {userData.balance}
-          </p>
+          <div className="flex flex-col gap-4">
+            <p>
+              <span className="font-semibold underline-offset-2">
+                Username:
+              </span>{" "}
+              {userData.username}
+            </p>
+            <p>
+              <span className="font-semibold underline-offset-2">
+                Full Name:
+              </span>{" "}
+              <span className="uppercase">{userData.fullName}</span>
+            </p>
+            <p>
+              <span className="font-semibold underline-offset-2">Email:</span>{" "}
+              {userData.email}
+            </p>
+            <p>
+              <span className="font-semibold underline-offset-2">Balance:</span>{" "}
+              $ {userData.balance}
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mt-8 md:mt-0">
           <div className="font-base font-semibold underline">
             Change Password
           </div>
