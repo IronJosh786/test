@@ -63,7 +63,7 @@ function AllTransaction() {
     return (
       <div
         key={entry._id}
-        className="bg-primary_light dark:bg-primary_dark text-white rounded-md border-gray p-2 flex flex-col justify-center items-center text-center gap-4 mb-8"
+        className="bg-[#eaebed] dark:bg-[#1d2a49] rounded-md border-gray p-2 flex flex-col justify-center items-center text-center gap-4 mb-8"
       >
         <div className="flex items-center gap-4">
           <div className="flex flex-col gap-4 items-center">
@@ -90,10 +90,8 @@ function AllTransaction() {
         </div>
         <div className="flex flex-col gap-4">
           <p
-            className={`font-bold font-base bg-primary_dark dark:bg-primary_light p-2 rounded-md ${
-              entry.from === userData._id
-                ? "text-red-900 dark:text-red-500"
-                : " text-green-500"
+            className={`font-bold font-base bg-white dark:bg-primary_light p-2 rounded-md ${
+              entry.from === userData._id ? "text-red-500" : " text-green-500"
             }`}
           >
             $ {entry.amount}

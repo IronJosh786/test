@@ -76,7 +76,7 @@ function NewTransaction() {
       <h4 className="font-h4">New Transaction</h4>
       <form
         onSubmit={handleSubmit}
-        className="my-4 flex flex-col border-2 border-gray rounded-md p-4 gap-4"
+        className="my-4 flex flex-col border-2 border-gray bg-[#eaebed] dark:bg-[#1d2a49] rounded-md p-4 gap-4"
       >
         <label htmlFor="username" className="font-base font-medium">
           Username<span className="text-sent">*</span>

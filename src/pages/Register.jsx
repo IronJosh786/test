@@ -34,6 +34,12 @@ function Register() {
     setSuccess(null);
     setLoading(true);
 
+    if (!formData.profilePicture) {
+      setError("Image is required");
+      setLoading(false);
+      return;
+    }
+
     const data = new FormData();
     data.append("fullName", formData.fullName);
     data.append("profilePicture", formData.profilePicture);

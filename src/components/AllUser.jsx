@@ -61,11 +61,11 @@ function AllUser() {
   return (
     <div className={`col-span-8 px-8 lg:px-0 mb-8`}>
       <h4 className="font-h4">All Users</h4>
-      <div className="my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-white">
+      <div className="my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {allUser.map((singleUser) => (
           <div
             key={singleUser._id}
-            className="bg-primary_light dark:bg-primary_dark flex flex-row items-center justify-between sm:flex-col sm:items-start gap-4 rounded-md p-2"
+            className="bg-[#eaebed] dark:bg-[#1d2a49] flex flex-row items-center justify-between sm:flex-col sm:items-start gap-4 rounded-md p-2"
           >
             <div className="flex flex-col xs:flex-row xs:items-center gap-4">
               <div>
@@ -85,7 +85,7 @@ function AllUser() {
             <div>
               <button
                 onClick={() => handleSend(singleUser.username)}
-                className="border-2 border-gray p-1 rounded-md font-sm text-white bg-primary_dark dark:bg-primary_light hover:bg-primary_light dark:hover:bg-primary_dark"
+                className="p-1 rounded-md font-sm text-white bg-primary_dark dark:bg-primary_light hover:bg-primary_light dark:hover:bg-primary_dark"
               >
                 Send <i className="ri-send-plane-2-fill"></i>
               </button>

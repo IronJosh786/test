@@ -118,7 +118,7 @@ function Profile() {
   return (
     <div className={`col-span-8 px-8 lg-px-0 mb-8`}>
       <h4 className="font-h4">Profile</h4>
-      <div className="my-4 flex flex-col items-center md:items-start text-center md:flex-row gap-4 md:justify-between font-sm bg-primary_light dark:bg-primary_dark rounded-md p-2 text-white">
+      <div className="my-4 flex flex-col items-center md:items-start text-center md:flex-row gap-4 md:justify-between font-sm bg-[#eaebed] dark:bg-[#1d2a49] rounded-md p-8">
         <div className="flex flex-col gap-4 items-center justify-center">
           <img
             src={userData.profilePictureUrl}
@@ -127,7 +127,7 @@ function Profile() {
           />
           <label
             htmlFor="profilePicture"
-            className="bg-[#2372f3] p-1 rounded-md cursor-pointer"
+            className="bg-[#2372f3] p-1 rounded-md cursor-pointer text-white"
           >
             Select Image
           </label>
@@ -196,7 +196,7 @@ function Profile() {
             type="text"
             id="currentPassword"
             onChange={handleChange}
-            className="max-w-[200px] p-1 font-sm text-text_light dark:text-white rounded-md border border-gray dark:bg-primary_light"
+            className="max-w-[200px] leading-4 p-1 font-sm text-text_light dark:text-text_dark rounded-md border border-gray dark:bg-bg_dark"
           />
           <label htmlFor="newPassword" className="font-semibold">
             New Password
@@ -205,7 +205,7 @@ function Profile() {
             type="text"
             id="newPassword"
             onChange={handleChange}
-            className="max-w-[200px] p-1 font-sm text-text_light dark:text-white rounded-md border border-gray dark:bg-primary_light"
+            className="max-w-[200px] leading-4 p-1 font-sm text-text_light dark:text-text_dark rounded-md border border-gray dark:bg-bg_dark"
           />
           <button
             className="max-w-[200px] p-1 rounded-md font-sm text-white bg-primary_dark dark:bg-primary_light hover:bg-primary_light dark:hover:bg-primary_dark ring-primary_dark dark:hover:ring-primary_light hover:ring-2"
