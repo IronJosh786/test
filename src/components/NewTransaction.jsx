@@ -46,6 +46,7 @@ function NewTransaction() {
       if (response.data.data) setSuccess(response.data.data);
       await fetchData(dispatch, userData);
     } catch (error) {
+      console.log(error);
       if (error.response) {
         // Server responded with an error
         const errorMessage = extractErrorMessage(error.response.data);

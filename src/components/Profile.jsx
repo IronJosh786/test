@@ -39,6 +39,7 @@ function Profile() {
 
     if (!image) {
       setImageError("Image is required");
+      setLoading(false);
       return;
     }
 
@@ -57,7 +58,7 @@ function Profile() {
       await fetchData(dispatch, userData);
       setImage(null);
     } catch (error) {
-      setLoading(false);
+      console.log(error);
       if (error.response) {
         // Server responded with an error
         const errorMessage = extractErrorMessage(error.response.data);
