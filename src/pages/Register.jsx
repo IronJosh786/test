@@ -46,7 +46,6 @@ function Register() {
       if (response.data.success) setSuccess(response.data.data);
       navigate("/login");
     } catch (error) {
-      console.log(error);
       if (error.response) {
         // Server responded with an error
         const errorMessage = extractErrorMessage(error.response.data);
