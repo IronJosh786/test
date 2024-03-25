@@ -55,6 +55,7 @@ function Login() {
       dispatch(setData(userDetails));
       navigate("/");
     } catch (error) {
+      console.log(error);
       if (error.response) {
         // Server responded with an error
         const errorMessage = extractErrorMessage(error.response.data);
